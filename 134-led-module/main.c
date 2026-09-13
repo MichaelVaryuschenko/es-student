@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 #include "led.h"
+#include "log.h"
 
 const uint BUTTON_PIN = 15;
 const uint DEBOUNCE_MS = 200;
@@ -14,16 +15,22 @@ bool get_button_debounce(uint pin) {
 }
 
 void handle_command(int command) {
-    if (command == 'e') {
-        led_set(true);
-        printf("led %s\n", led_is_on() ? "on" : "off");
-    }
-    else if (command == 'd') {
-        led_set(false);
-        printf("led %s\n", led_is_on() ? "on" : "off");
-    }
-    else if (command != PICO_ERROR_TIMEOUT) {
-        printf("unknown command: %c\n", command);
+    if (command != PICO_ERROR_TIMEOUT) {
+        LOG_DBG("got %c\n", command);
+        if (command == 'e') {
+            led_set(true);
+            LOG_INF("led %s\n", led_is_on() ? "on" : "off");
+        }
+        else if (command == 'd') {
+            led_set(false);
+            LOG_INF("led %s\n", led_is_on() ? "on" : "off");
+        }
+        else if (command == 'v') {
+            log_version();
+        }
+        else {
+            LOG_ERR("unknown command: %c\n", command);
+        }
     }
 }
 
@@ -46,7 +53,7 @@ int main() {
         button_pin_curr_value = get_button_debounce(BUTTON_PIN);
         if(button_pin_curr_value != button_pin_last_value) {
             led_toggle();
-            printf("led %s\n", led_is_on() ? "on" : "off");
+            LOG_INF("led %s\n", led_is_on() ? "on" : "off");
         }
         button_pin_last_value = button_pin_curr_value;
     }
