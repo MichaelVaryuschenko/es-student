@@ -14,7 +14,7 @@ TASK = "2.1.1"
 PROJECT = "211-command-usb"
 LOG_NAME = "device-2-1-1.log"
 COMMANDS = ["enable", "disable", "info", "nosuchcommand"]
-ANSWER_S = 2
+ANSWER_S = 4
 
 
 def find_board():

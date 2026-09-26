@@ -2,7 +2,7 @@
 
 #include "pico/unique_id.h"
 
-#define DEVICE_NAME "es-led-module"
+#define DEVICE_NAME "es-usb-command"
 #define FIRMWARE_VERSION "1.0.0"
 
 #define DEVICE_PROJECT "211-command-usb"

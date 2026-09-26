@@ -31,13 +31,13 @@ void handle_command(char* command) {
         LOG_INF("led %s\n", led_is_on() ? "on" : "off");
     }
     else if (!strcmp(command, "info")) {
-        log_version();
-    }
-    else if (!strcmp(command, "version")) {
         device_info();
     }
+    else if (!strcmp(command, "version")) {
+        log_version();
+    }
     else {
-        LOG_ERR("unknown command: %c\n", command);
+        LOG_ERR("unknown command: %s\n", command);
     }
 }
 

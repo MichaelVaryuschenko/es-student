@@ -3,19 +3,26 @@
 устройство: 2e8a:000a
 серийный номер: 50443405886ABF1C
 порт: COM3
-начало: 2026-09-22T22:49:45
+начало: 2026-09-26T10:44:04
    0.000 --> enable
-   1.297 <-- enable
-   1.297 <-- dbg read_line:65 got enable
-   1.297 <-- inf handle_command:27 led on
-   2.328 --> disable
-   3.906 <-- disable
-   3.906 <-- dbg read_line:65 got disable
-   3.906 <-- inf handle_command:31 led off
-   4.406 --> info
-   5.297 <-- info
-   5.297 <-- dbg read_line:65 got info
-   5.297 <-- device: es-led-module 1.0.0, built Sep 22 2026 22:32:38, log level 3
-   6.828 --> nosuchcommand
-   9.500 <-- nosuchcommand
-итог: отправлено команд 4, принято строк 10
+   1.203 <-- enable
+   1.203 <-- dbg read_line:65 got enable
+   1.203 <-- inf handle_command:27 led on
+   4.234 --> disable
+   5.812 <-- disable
+   5.812 <-- dbg read_line:65 got disable
+   5.812 <-- inf handle_command:31 led off
+   8.359 --> info
+   9.219 <-- info
+   9.219 <-- dbg read_line:65 got info
+   9.219 <-- project: 211-command-usb
+   9.219 <-- repo: https://github.com/MichaelVaryuschenko/es-student
+   9.219 <-- board: pico
+   9.219 <-- serial: 50443405886ABF1C
+   9.219 <-- chip: manufacturer 0x927, part 0x0002, revision 2
+   9.219 <-- pico-sdk: 2.3.0
+  12.750 --> nosuchcommand
+  15.422 <-- nosuchcommand
+  15.422 <-- dbg read_line:65 got nosuchcommand
+  15.422 <-- err handle_command:40 unknown command: nosuchcommand
+итог: отправлено команд 4, принято строк 17
