@@ -35,3 +35,4 @@
 
 void log_version(void);
 void log_prefix(const char *level, const char *function, int line);
+void log_ping(void);
