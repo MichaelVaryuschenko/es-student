@@ -39,7 +39,7 @@ void mem_info(void) {
     row("heap", (uintptr_t)&__bss_end__, (uintptr_t)&__HeapLimit);
     row("stack", (uintptr_t)&__StackBottom, (uintptr_t)&__StackTop);
 
-    printf("Total\n");
+    printf("total\n");
     printf("  %-11s %8u = %s %u + %s %u + %s %u\n", 
         "flash image", (unsigned)((uintptr_t)&__flash_binary_end - (uintptr_t)&__flash_binary_start), 
         "boot2", (unsigned)((uintptr_t)&__boot2_end__ - (uintptr_t)&__boot2_start__), 
