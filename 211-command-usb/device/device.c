@@ -6,6 +6,10 @@
 #include "hardware/regs/addressmap.h"
 #include "hardware/regs/sysinfo.h"
 
+const char DEVICE_PROJECT[] = "211-command-usb";
+const char DEVICE_REPO[] = "https://github.com/MichaelVaryuschenko/es-student";
+const char DEVICE_BOARD[] = "pico";
+
 void device_info() {
     char board_id[PICO_UNIQUE_BOARD_ID_SIZE_BYTES * 2 + 1];
     pico_get_unique_board_id_string(board_id, sizeof(board_id));
