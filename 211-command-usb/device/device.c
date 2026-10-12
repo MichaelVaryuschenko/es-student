@@ -11,7 +11,7 @@ const char DEVICE_PROJECT[] = "211-command-usb";
 const char DEVICE_REPO[] = "https://github.com/MichaelVaryuschenko/es-student";
 const char DEVICE_BOARD[] = "pico";
 
-info_t device_card = {16, "es-cmd-usb", 2};
+struct info_t device_card = {16, "es-cmd-usb", 2};
 
 void device_info() {
     char board_id[PICO_UNIQUE_BOARD_ID_SIZE_BYTES * 2 + 1];
@@ -35,9 +35,9 @@ void device_info() {
 void dev_info() {
     printf("%-14s  %-10s  %4s %6s %s\n", "struct", "address", "size", "offset", "value");
     printf("%-14s  0x%8x  %-4u\n", "device_card", &device_card, sizeof(device_card));
-    printf("- %-12s  0x%8x  %-4u %-6u 0x%08x\n", "version", &device_card.version, sizeof(device_card.version), offsetof(info_t, version), device_card.version);
-    printf("- %-12s  0x%8x  %-4u %-6u %s\n", "name", &device_card.name, sizeof(device_card.name), offsetof(info_t, name), device_card.name);
-    printf("- %-12s  0x%8x  %-4u %-6u %u\n", "revision", &device_card.revision, sizeof(device_card.revision), offsetof(info_t, revision), device_card.revision);
+    printf("- %-12s  0x%8x  %-4u %-6u 0x%08x\n", "version", &device_card.version, sizeof(device_card.version), offsetof(struct info_t, version), device_card.version);
+    printf("- %-12s  0x%8x  %-4u %-6u %s\n", "name", &device_card.name, sizeof(device_card.name), offsetof(struct info_t, name), device_card.name);
+    printf("- %-12s  0x%8x  %-4u %-6u %u\n", "revision", &device_card.revision, sizeof(device_card.revision), offsetof(struct info_t, revision), device_card.revision);
     uint16_t fields_size = sizeof(device_card.revision) + sizeof(device_card.version) + sizeof(device_card.name);
     printf("fields %u, sizeof %u, padding %u\n", fields_size, sizeof(device_card), sizeof(device_card) - fields_size);
 }
