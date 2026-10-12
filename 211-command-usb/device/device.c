@@ -32,7 +32,7 @@ void device_info() {
     printf("pico-sdk: %s\n", PICO_SDK_VERSION_STRING);
 }
 
-void dev_info() {
+void dev_info(void) {
     printf("%-14s  %-10s  %4s %6s %s\n", "struct", "address", "size", "offset", "value");
     printf("%-14s  0x%8x  %-4u\n", "device_card", &device_card, sizeof(device_card));
     printf("- %-12s  0x%8x  %-4u %-6u 0x%08x\n", "version", &device_card.version, sizeof(device_card.version), offsetof(struct info_t, version), device_card.version);
