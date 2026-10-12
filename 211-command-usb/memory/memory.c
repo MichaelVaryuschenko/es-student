@@ -74,18 +74,18 @@ void fw_info(void) {
         *heap_variable = 1951;
     }
 
-    uintptr_t main_ptr = (uintptr_t)main & ~1u;
-    uintptr_t fw_info_ptr = (uintptr_t)fw_info & ~1u;
-    uintptr_t command_ptrs[commands_count];
-    for(uint i = 0; i < commands_count; i++) {
+    uintptr_t main_ptr = (uintptr_t)main;
+    uintptr_t fw_info_ptr = (uintptr_t)fw_info;
+    uintptr_t command_ptrs[command_count];
+    for(uint i = 0; i < command_count; i++) {
         command_ptrs[i] = (uintptr_t)commands[i].handler;
     }
 
     printf("%-14s  %-10s  %s\n", "object", "address", "value");
-    printf("%-14s  0x%8x  0x%x\n", "main", main_ptr, *((uint16_t*)main_ptr));
-    printf("%-14s  0x%8x  0x%x\n", "fw_info", fw_info_ptr, *((uint16_t*)fw_info_ptr));
+    printf("%-14s  0x%8x  0x%x\n", "main", main_ptr, *((uint16_t*)(main_ptr & ~1u)));
+    printf("%-14s  0x%8x  0x%x\n", "fw_info", fw_info_ptr, *((uint16_t*)(fw_info_ptr & ~1u)));
     printf("%-14s  0x%8x\n", "commands", (uintptr_t)commands);
-    for(int i = 0; i < commands_count; i++) {
+    for(int i = 0; i < command_count; i++) {
         printf("- %-12s  0x%8x\n", commands[i].name, command_ptrs[i]);
     }
 

@@ -63,10 +63,10 @@ const struct command_t commands[] = {
     { "fw_info", cmd_fw_info },
 };
 
-const uint commands_count = sizeof(commands) / sizeof(commands[0]);
+const uint command_count = sizeof(commands) / sizeof(commands[0]);
 
 void handle_command(char* command) {
-    for(uint i = 0; i < commands_count; i++) {
+    for(uint i = 0; i < command_count; i++) {
         if(strcmp(command, commands[i].name) == 0) {
             if(commands[i].handler != NULL) {
                 commands[i].handler();
