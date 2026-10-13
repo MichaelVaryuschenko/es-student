@@ -3,7 +3,9 @@
 #include <stdlib.h>
 #include "hardware/regs/addressmap.h"
 #include "pico/stdlib.h"
+#include "hardware\gpio.h"
 #include "command.h"
+#include "led.h"
 
 extern char __flash_binary_start;
 extern char __flash_binary_end;
@@ -97,4 +99,20 @@ void fw_info(void) {
     printf("%-14s  0x%8x  %u\n", "heap_variable", heap_variable, *heap_variable);
 
     free(heap_variable);
+}
+
+void boot_info(void) {
+    const uint32_t* vectors = (const uint32_t*) VECTOR_TABLE;
+
+    uint32_t stack_top = vectors[0];
+    uint32_t reset_handler = vectors[1];
+    volatile uint32_t* gpio_in = (uint32_t*)(SIO_BASE + SIO_GPIO_IN_OFFSET);
+    uint32_t level = (*gpio_in >> led_pin()) & 1u;
+    printf("%-14s 0x%08x\n", "vector table", vectors);
+    printf("  %-12s 0x%08x\n", "stack top", stack_top);
+    printf("  %-12s 0x%08x\n", "reset", reset_handler);
+    printf("  %-12s 0x%08x\n", "reset (even)", reset_handler & ~1u);
+    printf("%-14s 0x%08x\n", "gpio in", gpio_in);
+    printf("  %-12s %u\n", "led bit", level);
+    printf("  %-12s %u\n", "gpio_get", gpio_get(led_pin()));
 }

@@ -23,3 +23,7 @@ void led_toggle(void) {
 bool led_is_on(void) {
     return led_state;
 }
+
+uint led_pin(void) {
+    return LED_PIN;
+}
