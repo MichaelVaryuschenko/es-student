@@ -20,6 +20,7 @@ extern char __HeapLimit;
 extern char __StackBottom;
 extern char __StackTop;
 
+#define VECTOR_TABLE 0x10000100
 #define ROM_SIZE_KB 16 
 
 int main(void);
@@ -90,7 +91,7 @@ void fw_info(void) {
     for(int i = 0; i < command_count; i++) {
         printf("- %-12s  0x%8x\n", commands[i].name, command_ptrs[i]);
     }
-    
+
     printf("%-14s  0x%8x  %s\n", "DEVICE_BOARD", &DEVICE_BOARD, DEVICE_BOARD);
     printf("%-14s  0x%8x  %u\n", "data_variable", &data_variable, data_variable);
     printf("%-14s  0x%8x  %u\n", "bss_variable", &bss_variable, bss_variable);

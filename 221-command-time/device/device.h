@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include "pico/unique_id.h"
 
-#define DEVICE_PROJECT "221-command-time";
+#define DEVICE_PROJECT "221-command-time"
 #define DEVICE_NAME "es-command-time"
 #define FIRMWARE_VERSION "1.1.0"
 
