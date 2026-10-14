@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "hardware/regs/addressmap.h"
 #include "pico/stdlib.h"
-#include "hardware\gpio.h"
+#include "hardware/gpio.h"
 #include "command.h"
 #include "led.h"
 
@@ -90,8 +90,7 @@ void fw_info(void) {
     for(int i = 0; i < command_count; i++) {
         printf("- %-12s  0x%8x\n", commands[i].name, command_ptrs[i]);
     }
-
-    printf("%-14s  0x%8x  %s\n", "DEVICE_PROJECT", &DEVICE_PROJECT, DEVICE_PROJECT);
+    
     printf("%-14s  0x%8x  %s\n", "DEVICE_BOARD", &DEVICE_BOARD, DEVICE_BOARD);
     printf("%-14s  0x%8x  %u\n", "data_variable", &data_variable, data_variable);
     printf("%-14s  0x%8x  %u\n", "bss_variable", &bss_variable, bss_variable);

@@ -6,8 +6,6 @@
 #include "pico/version.h"
 #include "hardware/regs/addressmap.h"
 #include "hardware/regs/sysinfo.h"
-
-const char DEVICE_PROJECT[] = "221-command-time";
 const char DEVICE_REPO[] = "https://github.com/MichaelVaryuschenko/es-student";
 const char DEVICE_BOARD[] = "pico";
 
