@@ -33,3 +33,7 @@ void clk_info(void) {
     freq_khz_meas = frequency_count_khz(CLOCKS_FC0_SRC_VALUE_ROSC_CLKSRC);
     printf("%-9s  %7s %12u\n", "rosc", "-", freq_khz_meas);
 }
+
+void uptime(void) {
+    printf("uptime: %llu ms\n", time_us_64() / 1000);
+}
