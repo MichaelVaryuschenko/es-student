@@ -1,8 +1,8 @@
 #include "clock.h"
 
 #include <stdio.h>
-#include "pico\stdlib.h"
-#include "hardware\clocks.h"
+#include "pico/stdlib.h"
+#include "hardware/clocks.h"
 
 static void row(const char *name, uint32_t set_khz, uint32_t measured_khz)
 {
@@ -31,5 +31,5 @@ void clk_info(void) {
     freq_khz_meas = frequency_count_khz(CLOCKS_FC0_SRC_VALUE_CLK_ADC);
     row("clk_adc", freq_hz_set / 1000, freq_khz_meas);
     freq_khz_meas = frequency_count_khz(CLOCKS_FC0_SRC_VALUE_ROSC_CLKSRC);
-    printf("%-9s  %7s %12u\n", "cld_ref", "-", freq_khz_meas);
+    printf("%-9s  %7s %12u\n", "rosc", "-", freq_khz_meas);
 }

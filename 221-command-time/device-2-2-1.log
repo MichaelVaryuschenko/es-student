@@ -3,24 +3,27 @@
 устройство: 2e8a:000a
 серийный номер: 50443405886ABF1C
 порт: COM3
-начало: 2026-10-14T12:30:28
+начало: 2026-10-14T12:39:47
    0.000 --> clk_info
-   1.703 <-- clk_info
+   0.312 <-- c
+   0.500 <-- l
+   0.703 <-- k
+   1.687 <-- _info
    1.703 <-- dbg read_line:117 got clk_info
    1.703 <-- signal     set_khz measured_khz
-   1.719 <-- clk_ref      12000        12001
-   1.719 <-- clk_sys     125000       125001
-   1.719 <-- clk_peri    125000       125001
-   1.719 <-- clk_usb      48000        48000
-   1.719 <-- clk_adc      48000        48000
-   1.719 <-- cld_ref          -         5344
+   1.703 <-- clk_ref      12000        12001
+   1.703 <-- clk_sys     125000       125000
+   1.703 <-- clk_peri    125000       125000
+   1.703 <-- clk_usb      48000        48000
+   1.703 <-- clk_adc      48000        48000
+   1.703 <-- rosc             -         5338
    2.125 --> info
-   2.906 <-- info
-   2.922 <-- dbg read_line:117 got info
-   2.922 <-- project: 221-command-time
-   2.922 <-- repo: https://github.com/MichaelVaryuschenko/es-student
-   2.922 <-- board: pico
-   2.922 <-- serial: 50443405886ABF1C
-   2.922 <-- chip: manufacturer 0x927, part 0x0002, revision 2
-   2.922 <-- pico-sdk: 2.3.0
-итог: отправлено команд 2, принято строк 17
+   3.109 <-- info
+   3.109 <-- dbg read_line:117 got info
+   3.109 <-- project: 221-command-time
+   3.109 <-- repo: https://github.com/MichaelVaryuschenko/es-student
+   3.109 <-- board: pico
+   3.109 <-- serial: 50443405886ABF1C
+   3.109 <-- chip: manufacturer 0x927, part 0x0002, revision 2
+   3.125 <-- pico-sdk: 2.3.0
+итог: отправлено команд 2, принято строк 20

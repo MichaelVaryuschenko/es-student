@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include "pico/unique_id.h"
 
-#define DEVICE_NAME "es-usb-command"
+#define DEVICE_NAME "es-command-time"
 #define FIRMWARE_VERSION "1.1.0"
 
 typedef struct info_t {
