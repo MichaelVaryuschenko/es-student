@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "hardware/regs/addressmap.h"
 #include "pico/stdlib.h"
-#include "hardware\gpio.h"
+#include "hardware/gpio.h"
 #include "command.h"
 #include "led.h"
 
@@ -21,6 +21,7 @@ extern char __StackBottom;
 extern char __StackTop;
 
 #define ROM_SIZE_KB 16 
+#define VECTOR_TABLE 0x10000100
 
 int main(void);
 uint32_t data_variable = 100;

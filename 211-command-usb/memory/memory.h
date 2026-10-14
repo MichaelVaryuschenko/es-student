@@ -2,8 +2,6 @@
 
 #include <stdint.h>
 
-#define VECTOR_TABLE 0x10000100
-
 extern const char DEVICE_PROJECT[];
 extern const char DEVICE_BOARD[];
 
